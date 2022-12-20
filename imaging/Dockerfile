@@ -2,5 +2,5 @@
 #RUN      echo Hello >/usr/share/nginx/html/index.html
 
 FROM     centos:7
-RUN      yum install gzip
-RUN      yum install nginx
+RUN      yum install epel-release -y
+RUN      yum install nginx -y
