@@ -4,5 +4,10 @@
 FROM     centos:7
 RUN      yum install epel-release -y
 RUN      yum install nginx -y
-ENTRYPOIN ["nginx", "-g", "daemon off;"] \
-EXPOSE    80
+##ENTRYPOIN ["nginx", "-g", "daemon off;"] \
+##EXPOSE    80
+#
+#
+#FROM centos:7
+#ENTRYPOINT ["ping", "-c3"]
+#CMD ["google.com"]
