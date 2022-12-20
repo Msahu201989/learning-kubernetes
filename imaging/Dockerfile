@@ -4,4 +4,5 @@
 FROM     centos:7
 RUN      yum install epel-release -y
 RUN      yum install nginx -y
-ENTRYPOIN ["nginx", "-g", "daemon off;"]
+ENTRYPOIN ["nginx", "-g", "daemon off;"] \
+EXPOSE    80
