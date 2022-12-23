@@ -3,7 +3,6 @@ kind: Deployment
 metadata:
   name: frontend-deploy
   labels:
-    app: guestbook
     tier: app1
 spec:
   replicas: 1
@@ -18,3 +17,53 @@ spec:
       containers:
       - name: nginx
         image: nginx:1.15
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: frontend-cip
+spec:
+  selector:
+    tier: app1
+  ports:
+    - name: http
+      protocol: TCP
+      port: 80
+      targetPort: 80
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: frontend-np
+#spec:
+#  type: NodePort
+#  selector:
+#    tier: app1
+#  ports:
+#    - name: http
+#      protocol: TCP
+#      port: 80
+#      targetPort: 80
+#---
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: frontend-lb
+#spec:
+#  type: LoadBalancer
+#  selector:
+#    tier: app1
+#  ports:
+#    - name: http
+#      protocol: TCP
+#      port: 80
+#      targetPort: 80
+#---
+#apiVersion: v1
+#kind: Service
+#metadata:
+#  name: google
+#spec:
+#  type: ExternalName
+#  externalName: www.google.com
