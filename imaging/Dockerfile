@@ -1,3 +1,15 @@
+FROM      nginx
+RUN       echo Hello >/usr/share/nginx/html/index.html
+
+
+
+
+
+
+
+
+
+
 ##FROM     nginx
 ##RUN      echo Hello >/usr/share/nginx/html/index.html
 #
@@ -8,6 +20,6 @@
 #EXPOSE    80
 ###
 ##
-FROM centos:7
-ENTRYPOINT ["ping", "-c3"]
-CMD ["google.com"]
+#FROM centos:7
+#ENTRYPOINT ["ping", "-c3"]
+#CMD ["google.com"]
